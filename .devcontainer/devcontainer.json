@@ -1,0 +1,26 @@
+{
+  "name": ".NET Learning Environment",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:8.0",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.vscode-dotnet-runtime",
+        "formulahendry.dotnet-test-explorer",
+        "streetsidesoftware.code-spell-checker"
+      ],
+      "settings": {
+        "dotnet.defaultSolutionOrFolder": "${workspaceFolder}",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-dotnettools.csharp"
+      }
+    }
+  },
+  "postCreateCommand": "dotnet --version && echo '✅ .NET Environment Ready for Learning!'",
+  "forwardPorts": [5000, 5001, 3000],
+  "remoteUser": "codespace"
+}
